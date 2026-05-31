@@ -10,8 +10,8 @@ from datetime import datetime
 from pypresence import Presence
 from pypresence.types import ActivityType, StatusDisplayType
 
-APP_ID = "1353248127469228074"
-REPO = "flamingnineteen/richpresencewups-db"
+APP_ID = "1510638157190922261"
+REPO = "sam51210/richpresencewups-db"
 PORT = 5005
 VERSION = 2.1
 
@@ -27,7 +27,7 @@ while i < len(sys.argv):
     i+=2
 
 # Check for updates
-update = requests.get(f'https://github.com/FlamingNineteen/RichPresenceWUPS/releases/tag/v{VERSION + 0.1}')
+update = requests.get(f'https://github.com/sam51210/RichPresenceWUPS/releases/tag/v{VERSION + 0.1}')
 if (update.status_code >= 200 and update.status_code < 300):
     print('A new update is available')
 
@@ -113,7 +113,7 @@ async def main():
             if (data["sender"] == "Wii U"):
                 image = ""
                 try:
-                    image = f"https://raw.githubusercontent.com/{REPO}/main/icons/{titles[data["long"]]}"
+                    image = f"https://raw.githubusercontent.com/{REPO}/main/icons/{titles[data['long']]}"
                 except:
                     image = "preview"
                 
@@ -123,14 +123,14 @@ async def main():
                 await asyncio.to_thread(client.update,
                     activity_type=       ActivityType.PLAYING,
                     status_display_type= StatusDisplayType.STATE,
-                    state=               data["app"],
-                    details=             None if data["nnid"] == '' else f"Network ID: {data["nnid"]}",
-                    start=               toepoch(data["time"], dst),
+                    state=               data['app'],
+                    details=             None if data['nnid'] == '' else f"Network ID: {data['nnid']}",
+                    start=               toepoch(data['time'], dst),
                     large_image=         image,
                     large_text=          data["long"],
                     party_size=          [data["ctrls"] + 1 if data["ctrls"] > -2 else 0, 4 if data["ctrls"] < 4 else 8],
                     small_image=         None if img == "" else img,
-                    small_text=          f"Using {"Nintendo" if img == "nn" else "Pretendo"} Network"
+                    small_text=          f"Using {'Nintendo' if img == 'nn' else 'Samtendo'} Network"
                 )
 
                 print("Updated Rich Presence")
