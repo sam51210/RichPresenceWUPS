@@ -46,9 +46,9 @@
     If not set correctly, the loader will refuse to use the plugin.
 **/
 WUPS_PLUGIN_NAME("RichPresence");
-WUPS_PLUGIN_DESCRIPTION("Discord Rich Presence for the Wii U.");
+WUPS_PLUGIN_DESCRIPTION("Discord Rich Presence for the Wii U. Changed to use Samtendo.");
 WUPS_PLUGIN_VERSION("v1.0");
-WUPS_PLUGIN_AUTHOR("Flaming19");
+WUPS_PLUGIN_AUTHOR("sam51210");
 WUPS_PLUGIN_LICENSE("GPL");
 
 #define STACK_SIZE 0x2000
@@ -302,7 +302,7 @@ WUPSConfigAPICallbackStatus ConfigMenuOpenedCallback(WUPSConfigCategoryHandle ro
         setupCat.add(WUPSConfigItemStub::Create("This plugin works with a computer application."));
         setupCat.add(WUPSConfigItemStub::Create("That application must be running to update rich presence."));
         setupCat.add(WUPSConfigItemStub::Create("Check this plugin's repository for more information:"));
-        setupCat.add(WUPSConfigItemStub::Create("https://github.com/flamingnineteen/RichPresenceWUPS"));
+        setupCat.add(WUPSConfigItemStub::Create("https://github.com/sam51210/RichPresenceWUPS"));
         root.add(std::move(setupCat));
         
         // Settings category
@@ -365,7 +365,7 @@ WUPSConfigAPICallbackStatus ConfigMenuOpenedCallback(WUPSConfigCategoryHandle ro
         helpCat.add(WUPSConfigItemStub::Create("The plugin is missing images of many Wii U games."));
         helpCat.add(WUPSConfigItemStub::Create("If you are interested in adding game images, and"));
         helpCat.add(WUPSConfigItemStub::Create("have a Github account, check out this repository:"));
-        helpCat.add(WUPSConfigItemStub::Create("https://github.com/flamingnineteen/RichPresenceWUPS-DB"));
+        helpCat.add(WUPSConfigItemStub::Create("https://github.com/sam51210/RichPresenceWUPS-DB"));
         root.add(std::move(helpCat));
 
         return WUPSCONFIG_API_CALLBACK_RESULT_SUCCESS;

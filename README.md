@@ -1,4 +1,4 @@
-# Wii U Rich Presence Plugin
+# Wii U Rich Presence Plugin (For Samtendo!)
 
 This plugin uses UDP to communicate with an application on your computer to set Discord Rich Presence for the user. The activity is set based on the application currently being played, the time the application was loaded, and the amount of controllers connected.
 
@@ -31,7 +31,3 @@ The plugin is missing images of many Wii U games. If you are interested in addin
 
 ## Building
 For specifics on building either the plugin or the executable, please check the respective directories.
-
-
-
-
